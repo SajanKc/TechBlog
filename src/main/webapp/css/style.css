@@ -3,3 +3,26 @@
 	padding: 0;
 	box-sizing: border-box;
 }
+
+.text__indent {
+	text-indent: 50px;
+}
+
+.banner__style {
+	clip-path: polygon(
+		100% 43%,
+		100% 7%,
+		100% 0%,
+		0% 0%,
+		0% 100%,
+		20% 95%,
+		40% 100%,
+		60% 95%,
+		80% 100%,
+		100% 95%,
+		100% 60%,
+		100% 42%,
+		100% 48%,
+		100% 30%
+	);
+}

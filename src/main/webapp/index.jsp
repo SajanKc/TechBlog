@@ -1,31 +1,127 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>TechBlog</title>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-	crossorigin="anonymous">
-<link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-	<h1>Home Page</h1>
+	<head>
+		<%@include file="includes/header_inc.jsp" %>
+	</head>
+	<body>
+		<%@include file="includes/navbar_inc.jsp"%>
+		<div class="container-fluid p-0 m-0">
+			<div class="jumbotron banner__style">
+				<div class="container">
+					<h2 class="display-3 mb-4">Welcome To Tech Blog</h2>
+					<p class="text__indent">
+						Welcome to technical blog, Lorem ipsum dolor sit, amet
+						consectetur adipisicing elit. Possimus vero minima
+						nesciunt aperiam rem nobis, laborum fugiat nemo velit
+						tenetur iste unde ipsam? Cumque minima veniam
+						exercitationem quidem vel obcaecati.
+					</p>
+					<p>
+						Welcome to technical blog, Lorem ipsum dolor sit, amet
+						consectetur adipisicing elit. Possimus vero minima
+						nesciunt aperiam rem nobis, laborum fugiat nemo velit
+						tenetur iste unde ipsam? Cumque minima veniam
+						exercitationem quidem vel obcaecati.
+					</p>
+					<a href="register.jsp" class="btn btn-outline-dark btn-md">
+						<i class="fa fa-user-plus" aria-hidden="true"></i>
+						Start ! It's Free
+					</a>
+					<a href="login.jsp" class="btn btn-outline-dark btn-md">
+						<i class="fa fa-sign-in" aria-hidden="true"></i>
+						Login
+					</a>
+				</div>
+			</div>
+		</div>
 
-	<!-- JavaScript -->
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
-		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-		crossorigin="anonymous"></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-		crossorigin="anonymous"></script>
-	<script
-		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-		crossorigin="anonymous"></script>
-	<script src="js/script.js"></script>
-</body>
+		<div class="container">
+			<div class="row mb-4">
+				<div class="col-md-4">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">Html and CSS</h5>
+							<p class="card-text">
+								Some quick example text to build on the card
+								title and make up the bulk of the card's
+								content.
+							</p>
+							<a href="#" class="btn btn-primary">Read more</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">Java Programming</h5>
+							<p class="card-text">
+								Some quick example text to build on the card
+								title and make up the bulk of the card's
+								content.
+							</p>
+							<a href="#" class="btn btn-primary">Read more</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">PHP and Laravel</h5>
+							<p class="card-text">
+								Some quick example text to build on the card
+								title and make up the bulk of the card's
+								content.
+							</p>
+							<a href="#" class="btn btn-primary">Read more</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row mb-4">
+				<div class="col-md-4">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">Html and CSS</h5>
+							<p class="card-text">
+								Some quick example text to build on the card
+								title and make up the bulk of the card's
+								content.
+							</p>
+							<a href="#" class="btn btn-primary">Read more</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">Java Programming</h5>
+							<p class="card-text">
+								Some quick example text to build on the card
+								title and make up the bulk of the card's
+								content.
+							</p>
+							<a href="#" class="btn btn-primary">Read more</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">PHP and Laravel</h5>
+							<p class="card-text">
+								Some quick example text to build on the card
+								title and make up the bulk of the card's
+								content.
+							</p>
+							<a href="#" class="btn btn-primary">Read more</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- JavaScript -->
+		<%@include file="includes/footer_inc.jsp" %>
+	</body>
 </html>
