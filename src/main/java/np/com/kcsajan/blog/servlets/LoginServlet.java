@@ -10,6 +10,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import np.com.kcsajan.blog.dao.UserDao;
+import np.com.kcsajan.blog.entities.Message;
 import np.com.kcsajan.blog.entities.User;
 import np.com.kcsajan.blog.helper.ConnectionProvider;
 
@@ -36,6 +37,9 @@ public class LoginServlet extends HttpServlet {
 			response.sendRedirect("profile.jsp");
 		} else {
 			out.println("failed");
+			Message msg = new Message("Invalid email or password !!! Try again", "error", "alert-danger");
+			HttpSession session = request.getSession();
+			session.setAttribute("msg", msg);
 			response.sendRedirect("login.jsp");
 		}
 

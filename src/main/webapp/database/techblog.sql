@@ -8,10 +8,10 @@ CREATE TABLE IF NOT EXISTS `user` (
 	`uid` INT PRIMARY KEY AUTO_INCREMENT,
 	`username` VARCHAR(20) NOT NULL,
 	`password` VARCHAR(255) NOT NULL,
-	`email` VARCHAR(30) NOT NULL,
-    `gender` VARCHAR(10) NOT NULL,
-    `about` VARCHAR(255) NOT NULL DEFAULT "Hey ! I'm using techblog",
-    `profile` VARCHAR(100) DEFAULT 'default.svg',
+	`email` VARCHAR(30) NOT NULL UNIQUE,
+     `gender` VARCHAR(10) NOT NULL,
+     `about` VARCHAR(255) NOT NULL DEFAULT "Hey ! I'm using techblog",
+     `profile` VARCHAR(100) DEFAULT 'default.svg',
 	`registered_at` TIMESTAMP DEFAULT now()
 ) AUTO_INCREMENT = 3;
 
