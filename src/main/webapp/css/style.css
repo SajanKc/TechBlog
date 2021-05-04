@@ -36,3 +36,8 @@ img {
 .nav-item:hover .nav-link.register {
 	color: honeydew !important;
 }
+
+.profile__picture {
+	width: 100px;
+	border: 1px solid gray;
+}

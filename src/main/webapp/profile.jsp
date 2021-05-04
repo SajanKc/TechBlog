@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="np.com.kcsajan.blog.entities.User"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,16 +7,10 @@
 </head>
 <body>
 	<%@include file="includes/navbar_inc.jsp"%>
-	<%
-	User user = (User) session.getAttribute("currentUser");
-	if (user == null) {
-		response.sendRedirect("login.jsp");
-	}
-	%>
 	<div class="container">
-		<h3><%=user.getUsername()%></h3>
-		<h3><%=user.getEmail()%></h3>
-		<h3><%=user.getGender()%></h3>
+		<h1>Profile Page</h1>
 	</div>
+	<!-- JavaScript -->
+	<%@include file="includes/footer_inc.jsp"%>
 </body>
 </html>
