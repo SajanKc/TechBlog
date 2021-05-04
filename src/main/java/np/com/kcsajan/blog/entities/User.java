@@ -1,5 +1,7 @@
 package np.com.kcsajan.blog.entities;
 
+import java.sql.Timestamp;
+
 public class User {
 
 	private int uid;
@@ -7,17 +9,21 @@ public class User {
 	private String email;
 	private String password;
 	private String gender;
+	private Timestamp registeredDate;
 	private String about;
+	private String profile;
 
 	public User() {
 	}
 
-	public User(int uid, String username, String email, String password, String gender, String about) {
+	public User(int uid, String username, String email, String password, String gender, Timestamp registeredDate,
+			String about) {
 		this.uid = uid;
 		this.username = username;
 		this.email = email;
 		this.password = password;
 		this.gender = gender;
+		this.registeredDate = registeredDate;
 		this.about = about;
 	}
 
@@ -75,5 +81,21 @@ public class User {
 
 	public void setAbout(String about) {
 		this.about = about;
+	}
+
+	public String getProfile() {
+		return profile;
+	}
+
+	public void setProfile(String profile) {
+		this.profile = profile;
+	}
+
+	public Timestamp getRegisteredDate() {
+		return registeredDate;
+	}
+
+	public void setRegisteredDate(Timestamp registeredDate) {
+		this.registeredDate = registeredDate;
 	}
 }
