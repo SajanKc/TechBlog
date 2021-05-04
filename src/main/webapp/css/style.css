@@ -26,3 +26,13 @@
 		100% 30%
 	);
 }
+
+img {
+	max-width: 100%;
+	object-fit: cover;
+}
+
+.nav-item:hover .nav-link.login,
+.nav-item:hover .nav-link.register {
+	color: honeydew !important;
+}

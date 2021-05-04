@@ -40,15 +40,15 @@
 			</li>
 			<li class="nav-item">
 				<a
-					class="nav-link btn btn-outline-dark btn-sm"
+					class="nav-link login btn btn-outline-dark btn-sm"
 					href="login.jsp"
 				>
 					<i class="fa fa-sign-in" aria-hidden="true"></i> Login
 				</a>
 			</li>
-			<li class="nav-item ml-3">
+			<li class="nav-item ml-lg-3">
 				<a
-					class="nav-link btn btn-outline-dark btn-sm"
+					class="nav-link register btn btn-outline-dark btn-sm"
 					href="register.jsp"
 				>
 					<i class="fa fa-user-plus" aria-hidden="true"></i>
