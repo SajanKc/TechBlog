@@ -41,3 +41,18 @@ img {
 	width: 100px;
 	border: 1px solid gray;
 }
+
+.input__icons .icon {
+	position: absolute;
+}
+.input-icons {
+	width: 100%;
+	margin-bottom: 10px;
+}
+.icon {
+	padding: 10px;
+	min-width: 40px;
+}
+.input__field {
+	padding-left: 35px;
+}

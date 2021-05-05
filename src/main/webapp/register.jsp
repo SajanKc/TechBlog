@@ -83,7 +83,6 @@ pageEncoding="UTF-8"%> <%@ page import="np.com.kcsajan.blog.servlets.*"%>
 										<textarea
 											class="form-control"
 											name="about"
-											name="about"
 											rows="2"
 											placeholder="Enter something about yourself..."
 											required
