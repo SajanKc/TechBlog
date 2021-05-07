@@ -25,13 +25,13 @@ response.sendRedirect("login.jsp"); } else { %>
 				</button>
 			</div>
 			<img class="profile__picture rounded-circle mx-auto mt-2 d-block"
-			<%if(user.getGender().equals("male")){ %>
-			src="image/profile/male_<%=user.getProfile()%>" alt="male" <%}else{
-			%> src="image/profile/female_<%=user.getProfile()%>" alt="female"
-			<%} %> />
+			<%if (user.getGender().equals("male")) {%>
+			src="image/profile/male_<%=user.getProfile()%>" alt="male" <%} else
+			{%> src="image/profile/female_<%=user.getProfile()%>" alt="female"
+			<%}%> />
+			<h3 class="text-center"><%=user.getUsername()%></h3>
 			<div class="modal-body pt-1">
 				<div class="container text-center">
-					<h3><%=user.getUsername()%></h3>
 					<div id="profile__details">
 						<table class="table">
 							<tbody style="text-align: start">

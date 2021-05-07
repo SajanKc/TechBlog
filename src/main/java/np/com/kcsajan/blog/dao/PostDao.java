@@ -69,7 +69,7 @@ public class PostDao {
 	public List<Post> getPost() {
 		List<Post> list = new ArrayList<>();
 		try {
-			String query = "SELECT * FROM post";
+			String query = "SELECT * FROM post ORDER BY post_id DESC";
 			PreparedStatement stmt = this.con.prepareStatement(query);
 			ResultSet result = stmt.executeQuery();
 			while (result.next()) {

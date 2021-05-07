@@ -34,7 +34,7 @@ public class LoginServlet extends HttpServlet {
 			out.println("success");
 			HttpSession session = request.getSession();
 			session.setAttribute("currentUser", user);
-			response.sendRedirect("profile.jsp");
+			response.sendRedirect("post.jsp");
 		} else {
 			out.println("failed");
 			Message msg = new Message("Invalid email or password !!! Try again", "error", "alert-danger");

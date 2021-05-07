@@ -59,4 +59,30 @@ $(document).ready(function () {
 			contentType: false,
 		});
 	});
+	// Calling getPosts function
+	let allPostRef = $(".c-link")[0];
+	getPosts(0, allPostRef);
 });
+
+// Get post
+function getPosts(catId, ref) {
+	$("#loader").show();
+	$("#post__container").hide();
+
+	$(".c-link").removeClass("active");
+
+	$.ajax({
+		url: "load_posts.jsp",
+		method: "GET",
+		data: { cid: catId },
+		success: function (data) {
+			$(ref).addClass("active");
+
+			$("#loader").hide();
+			$("#post__container").show().html(data);
+		},
+		error: function () {
+			console.log("Error...");
+		},
+	});
+}
