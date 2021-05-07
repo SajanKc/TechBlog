@@ -131,7 +131,6 @@ pageEncoding="UTF-8"%> <%@ page import="np.com.kcsajan.blog.servlets.*"%>
 						method: "POST",
 						data: form,
 						success: function (data) {
-							console.log(data);
 							if ($.trim(data) === "done") {
 								swal(
 									"Good job!",
@@ -141,7 +140,7 @@ pageEncoding="UTF-8"%> <%@ page import="np.com.kcsajan.blog.servlets.*"%>
 									window.location = "login.jsp";
 								});
 							} else {
-								swal(data);
+								swal("Registration not done : " + data);
 							}
 						},
 						error: function (error) {

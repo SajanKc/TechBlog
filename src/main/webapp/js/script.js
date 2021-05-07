@@ -29,4 +29,34 @@ $(document).ready(function () {
 			passwordStatus = false;
 		}
 	});
+
+	// Add post
+	$("#addPost").on("submit", function (event) {
+		event.preventDefault();
+		let form = new FormData(this);
+
+		$.ajax({
+			url: "AddPostServlet",
+			method: "POST",
+			data: form,
+			success: function (data) {
+				if ($.trim(data) === "done") {
+					swal(
+						"Good job!",
+						"Post Added Successfully !!! Redirecting to profile page.",
+						"success"
+					).then((value) => {
+						window.location = "profile.jsp";
+					});
+				} else {
+					swal("Post not added : " + data);
+				}
+			},
+			error: function (error) {
+				swal("Something went wrong... try again" + error);
+			},
+			processData: false,
+			contentType: false,
+		});
+	});
 });

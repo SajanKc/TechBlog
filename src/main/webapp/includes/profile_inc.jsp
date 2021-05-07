@@ -85,7 +85,7 @@ response.sendRedirect("login.jsp"); } else { %>
 											<input
 												class="form-control"
 												type="text"
-												name="username"
+												name="userName"
 												value="<%=user.getUsername()%>"
 											/>
 										</td>
@@ -133,6 +133,7 @@ response.sendRedirect("login.jsp"); } else { %>
 												type="file"
 												class="form-control"
 												name="profilePicture"
+												required
 											/>
 										</td>
 									</tr>
