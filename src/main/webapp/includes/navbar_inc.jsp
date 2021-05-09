@@ -30,6 +30,7 @@
 					}
 					%>
 				</div></li>
+				<li class="nav-item"><a class="nav-link" href="./post.jsp">Posts</a></li>
 		</ul>
 		<%
 		User currentUser = (User) session.getAttribute("currentUser");

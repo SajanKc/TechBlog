@@ -113,4 +113,27 @@ public class PostDao {
 		}
 		return list;
 	}
+
+	public Post getPostByPostId(int postId) {
+		Post post = null;
+		try {
+			String query = "SELECT * FROM post WHERE post_id=?";
+			PreparedStatement stmt = this.con.prepareStatement(query);
+			stmt.setInt(1, postId);
+			ResultSet result = stmt.executeQuery();
+			if (result.next()) {
+				int catId = result.getInt("cat_id");
+				String postTitle = result.getString("post_title");
+				String postContent = result.getString("post_content");
+				String postCode = result.getString("post_code");
+				String postImage = result.getString("post_image");
+				Timestamp postDate = result.getTimestamp("post_date");
+				int userId = result.getInt("user_id");
+				post = new Post(postId, postTitle, postContent, postCode, postImage, postDate, catId, userId);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return post;
+	}
 }
