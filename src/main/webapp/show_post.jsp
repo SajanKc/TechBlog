@@ -1,3 +1,4 @@
+<%@page import="java.text.DateFormat"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page
@@ -27,6 +28,10 @@ if (user1 == null) {
 	int pid = Integer.parseInt(request.getParameter("pid"));
 	PostDao pdao = new PostDao(ConnectionProvider.getCon());
 	Post post = pdao.getPostByPostId(pid);
+	// Getting user by id
+	int uid = post.getUserId();
+	UserDao udao = new UserDao(ConnectionProvider.getCon());
+	User postUser = udao.getUserById(uid);
 	%>
 	<div class="container">
 		<div class="row my-4">
@@ -36,15 +41,32 @@ if (user1 == null) {
 						<h4><%=post.getpTitle()%></h4>
 					</div>
 					<div class="card-body">
+						<div class="row">
+							<div class="col-md-8">
+								<p style="font-weight: bold">
+									Posted by : <a href="#"><%=postUser.getUsername()%></a>
+								</p>
+							</div>
+							<div class="col-md-4">
+								<p style="font-weight: bold"><%=DateFormat.getDateTimeInstance().format(post.getpDate())%></p>
+							</div>
+						</div>
 						<p><%=post.getpContent()%></p>
 						<br />
 						<pre class="code"><%=post.getpCode()%></pre>
 					</div>
+					<%
+					LikeDao likeDao = new LikeDao(ConnectionProvider.getCon());
+					%>
 					<div class="card-footer text-right">
-						<a href="#" class="btn btn-outline-primary btn-sm"><i
-							class="fa fa-thumbs-o-up"></i> <span>10</span></a> <a href="#"
-							class="btn btn-outline-primary btn-sm"><i
-							class="fa fa-commenting-o"></i> <span>15</span></a>
+						<button
+							onclick="doLike(<%=post.getpId()%>,<%=postUser.getUid()%>)"
+							class="btn btn-outline-primary btn-sm">
+							<i class="fa fa-thumbs-o-up"></i> <span class="like__counter"><%=likeDao.countLikeOnPost(post.getpId())%></span>
+						</button>
+						<button class="btn btn-outline-primary btn-sm">
+							<i class="fa fa-commenting-o"></i> <span>15</span>
+						</button>
 					</div>
 				</div>
 			</div>

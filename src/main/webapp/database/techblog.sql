@@ -60,3 +60,20 @@ CREATE TABLE IF NOT EXISTS `post` (
 )AUTO_INCREMENT = 3;
 
 drop table post;
+
+
+ -- Creating likes table
+-- ------------------------------------------
+
+CREATE TABLE IF NOT EXISTS `likes`(
+`lid` INT PRIMARY KEY AUTO_INCREMENT,
+`pid` INT NOT NULL,
+`uid` INT NOT NULL,
+FOREIGN KEY (`pid`) REFERENCES `post`(`post_id`)
+ON UPDATE CASCADE
+ON DELETE CASCADE,
+FOREIGN KEY (`uid`) REFERENCES `user`(`uid`)
+ON UPDATE CASCADE
+ON DELETE CASCADE
+);
+

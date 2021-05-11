@@ -12,7 +12,7 @@
 	} else {
 		posts = postDao.getPostByCategory(catId);
 	}
-	if(posts.size() == 0){
+	if (posts.size() == 0) {
 		out.println("<h3 class='display-4 text-center'> No posts found in this category... </h3>");
 		return;
 	}
@@ -26,10 +26,23 @@
 				<p><%=post.getpContent()%></p>
 				<!-- <pre><%=post.getpCode()%></pre> -->
 			</div>
+			<%
+			// Getting user by id
+			int uid = post.getUserId();
+			UserDao udao = new UserDao(ConnectionProvider.getCon());
+			User postUser = udao.getUserById(uid);
+			LikeDao likeDao = new LikeDao(ConnectionProvider.getCon());
+			%>
 			<div class="card-footer text-right">
-				<a href="show_post.jsp?pid=<%=post.getpId()%>" class="btn btn-outline-primary btn-sm">Read more...</a>
-				<a href="#" class="btn btn-outline-primary btn-sm"><i class="fa fa-thumbs-o-up"></i> <span>10</span></a>
-				<a href="#" class="btn btn-outline-primary btn-sm"><i class="fa fa-commenting-o"></i> <span>15</span></a>
+				<a href="show_post.jsp?pid=<%=post.getpId()%>"
+					class="btn btn-outline-primary btn-sm">Read more...</a>
+				<button onclick="doLike(<%=post.getpId()%>,<%=postUser.getUid()%>)"
+					class="btn btn-outline-primary btn-sm">
+					<i class="fa fa-thumbs-o-up"></i> <span class="like__counter"><%=likeDao.countLikeOnPost(post.getpId())%></span>
+				</button>
+				<button class="btn btn-outline-primary btn-sm">
+					<i class="fa fa-commenting-o"></i> <span>15</span>
+				</button>
 			</div>
 		</div>
 	</div>

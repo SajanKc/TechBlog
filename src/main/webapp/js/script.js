@@ -41,13 +41,11 @@ $(document).ready(function () {
 			data: form,
 			success: function (data) {
 				if ($.trim(data) === "done") {
-					swal(
-						"Good job!",
-						"Post Added Successfully !!! Redirecting to profile page.",
-						"success"
-					).then((value) => {
-						window.location = "profile.jsp";
-					});
+					swal("Good job!", "Post Added Successfully !!! Redirecting to profile page.", "success").then(
+						(value) => {
+							window.location = "profile.jsp";
+						}
+					);
 				} else {
 					swal("Post not added : " + data);
 				}
@@ -83,6 +81,31 @@ function getPosts(catId, ref) {
 		},
 		error: function () {
 			console.log("Error...");
+		},
+	});
+}
+
+// like dislike
+function doLike(pid, uid) {
+	console.log(pid, uid);
+	const data = {
+		uid: uid,
+		pid: pid,
+		operation: "like",
+	};
+
+	$.ajax({
+		url: "LikeServlet",
+		data: data,
+		success: function (data) {
+			if (data.trim() == "true") {
+				let count = $(".like__counter").html();
+				count++;
+				$(".like__counter").html(count);
+			}
+		},
+		erro: function (err) {
+			console.log(err);
 		},
 	});
 }

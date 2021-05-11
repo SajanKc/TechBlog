@@ -62,6 +62,34 @@ public class UserDao {
 		return user;
 	}
 
+	public User getUserById(int uid) {
+		User user = null;
+		try {
+			String query = "SELECT * FROM user WHERE uid=?";
+			PreparedStatement stmt = this.con.prepareStatement(query);
+			stmt.setInt(1, uid);
+
+			ResultSet result = stmt.executeQuery();
+			if (result.next()) {
+				user = new User();
+
+				user.setUid(result.getInt("uid"));
+
+				user.setUsername(result.getString("username"));
+				user.setPassword(result.getString("password"));
+				user.setEmail(result.getString("email"));
+				user.setGender(result.getString("gender"));
+				user.setAbout(result.getString("about"));
+				user.setProfile(result.getString("profile"));
+				user.setRegisteredDate(result.getTimestamp("registered_at"));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return user;
+	}
+
 	public boolean updateUser(User user) {
 		boolean status = false;
 		try {
