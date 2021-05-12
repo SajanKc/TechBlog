@@ -83,6 +83,68 @@ function getPosts(catId, ref) {
 			console.log("Error...");
 		},
 	});
+
+	// Profile Picture Update
+	$("#EditProfilePicture").on("submit", function (event) {
+		event.preventDefault();
+
+		let form = new FormData(this);
+
+		$.ajax({
+			url: "EditProfilePictureServlet",
+			method: "POST",
+			data: form,
+			success: function (data) {
+				if ($.trim(data) === "Profile_Updated") {
+					swal(
+						"Good job!",
+						"Profile Picture Updated Successfully !!! Redirecting to home page.",
+						"success"
+					).then((value) => {
+						window.location = "index.jsp";
+					});
+				} else {
+					swal("Something went wrong : " + data);
+				}
+			},
+			error: function (error) {
+				swal("Something went wrong... try again");
+			},
+			processData: false,
+			contentType: false,
+		});
+	});
+
+	// Profile Details Update Script
+	$("#EditProfileDetails").on("submit", function (event) {
+		event.preventDefault();
+
+		let form = new FormData(this);
+
+		$.ajax({
+			url: "EditServlet",
+			method: "POST",
+			data: form,
+			success: function (data) {
+				if ($.trim(data) === "Profile_Updated") {
+					swal(
+						"Good job!",
+						"Profile Data Updated Successfully !!! Redirecting to home page.",
+						"success"
+					).then((value) => {
+						window.location = "index.jsp";
+					});
+				} else {
+					swal("Something went wrong : " + data);
+				}
+			},
+			error: function (error) {
+				swal("Something went wrong... try again");
+			},
+			processData: false,
+			contentType: false,
+		});
+	});
 }
 
 // like dislike

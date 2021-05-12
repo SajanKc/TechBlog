@@ -9,22 +9,8 @@
 }
 
 .banner__style {
-	clip-path: polygon(
-		100% 43%,
-		100% 7%,
-		100% 0%,
-		0% 0%,
-		0% 100%,
-		20% 95%,
-		40% 100%,
-		60% 95%,
-		80% 100%,
-		100% 95%,
-		100% 60%,
-		100% 42%,
-		100% 48%,
-		100% 30%
-	);
+	clip-path: polygon(100% 43%, 100% 7%, 100% 0%, 0% 0%, 0% 100%, 20% 95%, 40% 100%,
+		60% 95%, 80% 100%, 100% 95%, 100% 60%, 100% 42%, 100% 48%, 100% 30%);
 }
 
 img {
@@ -32,27 +18,32 @@ img {
 	object-fit: cover;
 }
 
-.nav-item:hover .nav-link.login,
-.nav-item:hover .nav-link.register {
+.nav-item:hover .nav-link.login, .nav-item:hover .nav-link.register {
 	color: honeydew !important;
-}
-
-.profile__picture {
-	width: 100px;
-	border: 1px solid gray;
 }
 
 .input__icons .icon {
 	position: absolute;
 }
+
 .input-icons {
 	width: 100%;
 	margin-bottom: 10px;
 }
+
 .icon {
 	padding: 10px;
 	min-width: 40px;
 }
+
 .input__field {
 	padding-left: 35px;
+}
+
+.circle__profile {
+	height: 135px;
+	width: 135px;
+	border-radius: 50%;
+	overflow: hidden;
+	border: 1px solid gray;
 }

@@ -93,15 +93,29 @@ public class UserDao {
 	public boolean updateUser(User user) {
 		boolean status = false;
 		try {
-			String query = "UPDATE user SET username=?, email=?, password=?, about=?, gender=?, profile=? WHERE uid=?";
+			String query = "UPDATE user SET username=?, email=?, password=?, about=?, gender=? WHERE uid=?";
 			PreparedStatement stmt = con.prepareStatement(query);
 			stmt.setString(1, user.getUsername());
 			stmt.setString(2, user.getEmail());
 			stmt.setString(3, user.getPassword());
 			stmt.setString(4, user.getAbout());
 			stmt.setString(5, user.getGender());
-			stmt.setString(6, user.getProfile());
-			stmt.setInt(7, user.getUid());
+			stmt.setInt(6, user.getUid());
+			stmt.executeUpdate();
+			status = true;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return status;
+	}
+
+	public boolean updateUserProfile(User user) {
+		boolean status = false;
+		try {
+			String query = "UPDATE user SET profile=? WHERE uid=?";
+			PreparedStatement stmt = con.prepareStatement(query);
+			stmt.setString(1, user.getProfile());
+			stmt.setInt(2, user.getUid());
 			stmt.executeUpdate();
 			status = true;
 		} catch (Exception e) {
